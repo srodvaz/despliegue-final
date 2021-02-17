@@ -1,0 +1,30 @@
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: Arial, Helvetica, sans-serif;
+    color: white;
+}
+
+h1 {
+    background-color: orange;
+    margin: 0px;
+    padding: 10px;
+}
+
+.enlace {
+    font-weight: bold;
+    margin: 0 15px 0 15px;
+    color: white;
+}
+
+.enlaces {
+    background-color: rgb(255, 200, 98);
+    padding: 20px;
+}
+
+.result {
+    background-color: rgb(255, 199, 95);
+    padding: 15px;
+}
