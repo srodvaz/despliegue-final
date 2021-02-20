@@ -22,18 +22,30 @@
     if (!$conn) {
         die("Conexión fallida: " . mysqli_connect_error());
     }
-    // Realizamos el detele en la BBDD
-    $query = "DELETE FROM clientes WHERE id=3";
-    $resultado = mysqli_query($conn, $query);
+    // Form para que se elija el registro que se quiere eliminar
+    echo "<form class='result' name='input' method='get' action=''>
+    <label>Inserta qué registro quieres eliminar</label>
+    <input type='number' name='numero' placeholder='ID a eliminar'>
+    <input type='submit' value='OK'>
+    </form>";
+    $numero = $_GET['numero'];
 
-    if ($resultado === TRUE) {
-        echo "<h3 class='result'>Registro eliminado correctamente.</h3>";
-    } else {
-        echo "<div class='result'>Error: " . $conn->error . "</div>";
+    // Realizamos el detele en la BBDD
+    if (isset($numero)) {
+        $query = "DELETE FROM clientes WHERE id=$numero";
+        $resultado = mysqli_query($conn, $query);
+
+        // Mostramos el resultado de la consulta
+        if ($resultado === TRUE) {
+            echo "<h3 class='result'>Registro eliminado correctamente.</h3>";
+        } else {
+            echo "<div class='result'>Error: " . $conn->error . "</div>";
+        }
+        $conn->close();
     }
 
-    $conn->close();
-
+    //Enlace de vuelta al index
+    echo "<a class='volver' href='../index.html'>Volver atrás</a>"
     ?>
 </body>
 

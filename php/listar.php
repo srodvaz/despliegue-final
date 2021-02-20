@@ -26,6 +26,7 @@
     $query = "SELECT id, nombre, apellido FROM clientes";
     $resultado = mysqli_query($conn, $query);
 
+    //Mostramos el resultado
     if ($resultado->num_rows > 0) {
         echo "<h3 class='result'>Resultados:</h3>";
         while ($row = $resultado->fetch_assoc()) {
@@ -34,9 +35,10 @@
     } else {
         echo "<div class='result'>0 resultados</div>";
     }
-
     $conn->close();
 
+    //Enlace de vuelta al index
+    echo "<a class='volver' href='../index.html'>Volver atrás</a>"
     ?>
 </body>
 

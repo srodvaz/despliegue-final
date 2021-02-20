@@ -18,21 +18,24 @@
     // Creamos la conexión a las BBDD
     $conn = conexion();
 
-    // Check connection 
+    // Comprobamos la conexión
     if (!$conn) {
         die("Conexión fallida: " . mysqli_connect_error());
     }
-    $query = "DROP DATABASE tarea1PHP";
+    // Pasamos el delete a la BBDD
+    $query = "DELETE FROM Clientes";
     $resultado = mysqli_query($conn, $query);
 
+    // Mostramos el resultado
     if ($resultado === TRUE) {
-        echo "<h3 class='result'>Base de Datos eliminada correctamente.</h3>";
+        echo "<h3 class='result'>Todos los datos eliminados correctamente.</h3>";
     } else {
         echo "<div class='result'>Error: " . $conn->error . "</div>";
     }
-
     $conn->close();
-
+    
+    // Enlace al index
+    echo "<a class='volver' href='../index.html'>Volver atrás</a>"
     ?>
 </body>
 

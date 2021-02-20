@@ -23,17 +23,19 @@
         die("Conexión fallida: " . mysqli_connect_error());
     }
     // Ejecutamos la sentencia insert en la BBDD
-    $query = "insert into clientes(nombre,apellido,email) values ('nombre1','apellido1','email1')";
+    $query = "insert into clientes(nombre,apellido,email) values ('test','automatico','email1')";
     $resultado = mysqli_query($conn, $query);
 
+    // Mostramos los resultados
     if ($resultado === TRUE) {
         echo "<h3 class='result'>Nuevo registro creado.</h3>";
     } else {
         echo "<div class='result'>Error: " . $sql . "<br>" . $conn->error . "</div>";
     }
-
     $conn->close();
-    
+
+    // enlace de vuelta a index
+    echo "<a class='volver' href='../index.html'>Volver atrás</a>"
     ?>
 </body>
 

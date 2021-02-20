@@ -26,14 +26,16 @@
     $query = "UPDATE clientes SET apellido='Doe' WHERE id=2";
     $resultado = mysqli_query($conn, $query);
 
+    // Mostrar el resultado de la consulta
     if ($resultado === TRUE) {
         echo "<h3 class='result'>Registro modificado</h3>";
     } else {
         echo "<div class='result'>Error: " . $conn->error . "</div>";
     }
-
     $conn->close();
 
+    //Enlace de vuelta al index
+    echo "<a class='volver' href='../index.html'>Volver atrás</a>"
     ?>
 </body>
 

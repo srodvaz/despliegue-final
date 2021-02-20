@@ -28,3 +28,9 @@ h1 {
     background-color: rgb(255, 199, 95);
     padding: 15px;
 }
+
+.volver{
+    font-weight: bold;
+    margin: 0 15px 0 15px;
+    color: black;
+}
