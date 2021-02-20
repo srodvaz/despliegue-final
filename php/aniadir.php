@@ -11,6 +11,7 @@
 <body>
     <?php
     echo "<h1>BASES DE DATOS 3-1 - Añadir</h1>";
+    echo "<h3 class='result'>Se añade otro registro automático con datos: test, automatico, email@test.com</h3>";
 
     // Llamamos a la clase conexion con los datos de la BBDD
     require_once('conexion.php');
@@ -23,7 +24,7 @@
         die("Conexión fallida: " . mysqli_connect_error());
     }
     // Ejecutamos la sentencia insert en la BBDD
-    $query = "insert into clientes(nombre,apellido,email) values ('test','automatico','email1')";
+    $query = "insert into clientes(nombre,apellido,email) values ('test','automatico','email@test.com')";
     $resultado = mysqli_query($conn, $query);
 
     // Mostramos los resultados

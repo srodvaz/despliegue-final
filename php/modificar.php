@@ -10,8 +10,8 @@
 
 <body>
     <?php
-    echo "<h1>BASES DE DATOS 3-1 - Añadir</h1>";
-
+    echo "<h1>BASES DE DATOS 3-1 - Modificación</h1>";
+    echo "<h3 class='result'>Se modifica el apellido del registro con ID 2</h3>";
     // Llamamos a la clase conexion con los datos de la BBDD
     require_once('conexion.php');
 
