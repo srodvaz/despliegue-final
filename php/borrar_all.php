@@ -11,13 +11,12 @@
 <body>
     <?php
     echo "<h1>BASES DE DATOS 3-1 - Añadir</h1>";
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "tarea1PHP";
 
-    // Create connection 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Llamamos a la clase conexion con los datos de la BBDD
+    require_once('conexion.php');
+
+    // Creamos la conexión a las BBDD
+    $conn = conexion();
 
     // Check connection 
     if (!$conn) {

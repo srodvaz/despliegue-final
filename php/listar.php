@@ -11,18 +11,18 @@
 <body>
     <?php
     echo "<h1>BASES DE DATOS 3-1 - Listar</h1>";
-    $servername = "localhost";
-    $username = "root";
-    $password = "";
-    $dbname = "tarea1PHP";
 
-    // Create connection 
-    $conn = mysqli_connect($servername, $username, $password, $dbname);
+    // Llamamos a la clase conexion con los datos de la BBDD
+    require_once('conexion.php');
 
-    // Check connection 
+    // Creamos la conexión a las BBDD
+    $conn = conexion();
+
+    //Comprobamos la conexión a la BBDD
     if (!$conn) {
         die("Conexión fallida: " . mysqli_connect_error());
     }
+    // Realizamos el select a la BBDD
     $query = "SELECT id, nombre, apellido FROM clientes";
     $resultado = mysqli_query($conn, $query);
 

@@ -12,20 +12,18 @@
     <?php
     echo "<h1>BASES DE DATOS 3-1 - Añadir</h1>";
 
+    // Llamamos a la clase conexion con los datos de la BBDD
     require_once('conexion.php');
-    // $servername = "localhost";
-    // $username = "root";
-    // $password = "";
-    // $dbname = "tarea1PHP";
 
-    // Create connection 
+    // Creamos la conexión a las BBDD
     $conn = conexion();
 
-    // Check connection 
+    // Comprobamos la conexión a la BBDD
     if (!$conn) {
         die("Conexión fallida: " . mysqli_connect_error());
     }
-    $query = "UPDATE clientes SET apellido='Does' WHERE id=2";
+    // Realizamos el update a la BBDD
+    $query = "UPDATE clientes SET apellido='Doe' WHERE id=2";
     $resultado = mysqli_query($conn, $query);
 
     if ($resultado === TRUE) {
